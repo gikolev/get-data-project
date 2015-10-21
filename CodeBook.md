@@ -77,7 +77,7 @@ Additional vectors obtained by averaging the signals in a signal window sample. 
 
 The R script run_analysis.R does the following:
 
-1. Merges the training and the test sets to create one data set.
+### 1. Merges the training and the test sets to create one data set.
 
 A file path is established to the local folder containing the data to facillitate extraction:
 ````R
@@ -115,7 +115,7 @@ where the column names are taken from the "features.txt" file.
 
 The three data frames are merged via `master_data <- cbind(subject, activity, variables)`.
 
-2. Extracts only the measurements on the mean and standard deviation for each measurement. 
+### 2. Extracts only the measurements on the mean and standard deviation for each measurement. 
 
 ````R
 subset_variable_names <- variable_names$V2[grep("mean\\(\\)|std\\(\\)", variable_names$V2)]
@@ -123,7 +123,7 @@ columns <- union(c("subject", "activity"), subset_variable_names)
 data <- subset(master_data, select = columns)
 ````
 
-3. Uses descriptive activity names (from the "activity_labels.txt" file) to name the activities in the data set
+### 3. Uses descriptive activity names (from the "activity_labels.txt" file) to name the activities in the data set
 
 ````R
 labels <- read.table(paste(path, "/activity_labels.txt", sep = ""), header = FALSE)
@@ -132,7 +132,7 @@ data$activity <- data$V2
 data <- select(data, -V2)
 ````
 
-4. Appropriately labels the data set with descriptive variable names. 
+### 4. Appropriately labels the data set with descriptive variable names. 
 
 Based on Week 4 lecture slides from the Getting and Cleaning Data Coursera course, names of variables should be:
 - All lower case when possible
@@ -156,7 +156,7 @@ names(data) <- gsub("-", "", names(data))
 names(data) <- gsub("\\()", "", names(data))
 ````
 
-5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+### 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
 ````R
 data_melted <- melt(data, id = c("subject", "activity"))
