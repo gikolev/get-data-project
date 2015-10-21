@@ -7,11 +7,9 @@ The goal of the project is to collect, clean and turn a data set into tidy data 
 
 [CodeBook.md](https://github.com/gikolev/get-data-project/blob/master/CodeBook.md) describes the data, variables, and any transformations performed to clean up the data.
 
-[run_analysis.R](https://github.com/gikolev/get-data-project/blob/master/run_analysis.R) contains the R script used to perform the manipulations described in CodeBook.
-
 [tidy_data.txt](https://github.com/gikolev/get-data-project/blob/master/tidy_data.txt) is a .txt version of the tidy data frame produced by running the R script.
 
-The R script run_analysis.R does the following:
+[run_analysis.R](https://github.com/gikolev/get-data-project/blob/master/run_analysis.R) contains an R script that does the following:
 
 ### 1. Merges the training and the test sets to create one data set.
 
